@@ -14,3 +14,10 @@ export const removePlayer = battletag => {
   }
 }
 
+export const submitTeam = players => {
+  return {
+    type: 'SUBMIT_TEAM',
+    players
+  }
+}
+
