@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { removePlayer } from '../actions'
+import RemovePlayer from '../containers/RemovePlayer'
 
-const Player = ({ text }) => (
-  <li>
-    {text}
-  </li>
+const Player = ({ battletag, dispatch }) => (
+  <div>
+    {battletag} <RemovePlayer battletag={battletag}/>
+  </div>
 )
 
 Player.propTypes = {
-  text: PropTypes.string.isRequired
+  battletag: PropTypes.string.isRequired
 }
 
 export default Player

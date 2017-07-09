@@ -5,9 +5,11 @@ const players = (state = [], action) => {
         ...state,
         {
           id: action.id,
-          text: action.text
+          battletag: action.battletag
         }
       ]
+    case 'REMOVE_PLAYER':
+      return state.filter(player => player.battletag != action.battletag)
     default:
       return state
   }

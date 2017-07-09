@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 import Player from './Player'
 
 const PlayerList = ({ players }) => (
-  <ul>
+  <div>
     {players.map(player => (
       <Player key={player.id} {...player} />
     ))}
-  </ul>
+  </div>
 )
 
 PlayerList.propTypes = {
   players: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired
+      battletag: PropTypes.string.isRequired
     }).isRequired
   ).isRequired
 }
