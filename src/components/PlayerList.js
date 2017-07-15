@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Player from './Player'
 import SubmitTeam from '../containers/SubmitTeam'
 
-const PlayerList = ({ players }) => (
+const PlayerList = ({ players, handleDeletePlayer }) => (
   <div>
     {players.map(player => (
-      <Player key={player.id} {...player} />
+      //<Player key={player.id} {...player} />
+      <div key={player.id}>
+            {player.battletag} <i className="fa fa-times-circle-o" onClick={() => handleDeletePlayer(player.battletag)} aria-hidden="true"></i>
+      </div>
     ))}
       <SubmitTeam players={players}/>
   </div>

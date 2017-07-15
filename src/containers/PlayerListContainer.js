@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
+import { toggleTodo, removePlayer } from '../actions'
 import PlayerList from '../components/PlayerList'
 
 const mapStateToProps = state => {
@@ -8,8 +8,18 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleDeletePlayer: (battletag) => {
+      dispatch(removePlayer(battletag))
+    }
+  }
+}
+
+
 const PlayerListContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(PlayerList)
 
 export default PlayerListContainer
