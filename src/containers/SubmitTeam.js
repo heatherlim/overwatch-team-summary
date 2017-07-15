@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { submitTeam } from '../actions'
 
-let SubmitTeam = ({ players, dispatch }) => {
+let SubmitTeam = ({ players }) => {
   return (
     <button onClick={() => dispatch(submitTeam(players))} aria-hidden="true">Submit Team</button>
   )

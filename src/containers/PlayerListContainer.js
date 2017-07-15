@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleTodo, removePlayer } from '../actions'
+import { toggleTodo, removePlayer, fetchTeamInfo } from '../actions'
 import PlayerList from '../components/PlayerList'
 
 const mapStateToProps = state => {
@@ -10,6 +10,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    handleSubmitTeam: (players) => {
+      dispatch(fetchTeamInfo(players))
+    },
     handleDeletePlayer: (battletag) => {
       dispatch(removePlayer(battletag))
     }
