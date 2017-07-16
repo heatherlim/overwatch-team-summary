@@ -24,6 +24,13 @@ export const submitTeam = players => {
   }
 }
 
+export const togglePlayerList = visibility => {
+  return {
+    type: 'TOGGLE_PLAYERS_LIST',
+    visibility
+  }
+}
+
 function requestPlayerInfo(players) {
   return {
     type: 'REQUEST_PLAYER_INFO',
@@ -54,7 +61,6 @@ export function fetchTeamInfo(players) {
        .then(resp => resp.json())
        .catch(err => dispatch(handleErrorMessage(player)))
    )).then(jsonArray => {
-     debugger;
        players.forEach(function(player, index){
          dispatch(receivePlayerInfo(player, jsonArray[index]))
        })
