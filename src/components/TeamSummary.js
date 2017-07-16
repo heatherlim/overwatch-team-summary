@@ -2,7 +2,7 @@ import React from 'react'
 
 const getAverage = (playerList) => {
   var sum = playerList.reduce((acc, sum) => acc + sum["comprank"], 0)
-  return "Average SR: " + Math.floor(sum/playerList.length)
+  return " Average SR: " + Math.floor(sum/playerList.length)
 }
 
 const getRange = (playerList) => {
@@ -15,7 +15,6 @@ const getRange = (playerList) => {
 const TeamSummary = ({playersResponse, handleClearPlayersResponse}) => {
   return(
     <div>
-      <div>
         Team Summary
         <div>  
           {playersResponse.players.map((player, index) => 
@@ -34,10 +33,8 @@ const TeamSummary = ({playersResponse, handleClearPlayersResponse}) => {
         >
           Go Back
         </button>
-      </div>
     </div>
   )
 }
-
 
 export default TeamSummary
